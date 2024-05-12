@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containerIntro{
+    height: calc(100vh - 50px);
+    display: flex;
+}
+.leftInt{
+    display: flex;
+    flex-direction: column;
+width: 60%;
+align-items: center;
+justify-content: center;
+}
+.leftInt>h1{
+    width: 70%;
+   font-size: 60px; 
+}
+.leftInt>p{
+    width: 70%;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.leftDesc{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.leftDesc>button{
+padding: 15px;
+background-color: darkblue;
+color: white;
+border-radius: 10px;
+font-weight: bold;
+border: none;
+cursor: pointer;
+letter-spacing: 3px;
+}
+.leftContact{
+    display: flex;
+    flex-direction: column;
+}
+.leftContact>span{
+    font-weight: bold;
+    color: #f0667d;
+}
+.leftContact>h4{
+    color: gray;
+}
+
+.image{
+    margin-top: 50px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.rightInt{
+    width: 40%;
+    margin-top: 5px;
+}
