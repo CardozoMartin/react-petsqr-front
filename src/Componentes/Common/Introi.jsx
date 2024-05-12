@@ -1,3 +1,4 @@
+import Animation from "../Animation/Animation"
 import "./intro.css"
 
 const Introi = () => {
@@ -17,6 +18,7 @@ const Introi = () => {
         <div className="rightInt">
             <img src="https://findpetapp.com/site/wp-content/uploads/2022/03/animacio%CC%81n3.gif" alt="" className="image" />
         </div>
+        <Animation/>
     </div>
   )
 }
