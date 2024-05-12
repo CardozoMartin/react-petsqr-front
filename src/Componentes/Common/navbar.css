@@ -1,0 +1,40 @@
+.navContainer{
+    height: 50px;
+}
+
+.wrapper{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.left{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-weight: bold;
+    text-decoration: underline crimson;
+}
+
+.menu{
+display: flex;
+}
+.menuItem{
+margin-right: 30px;
+font-size: 20px;
+font-weight: bold;
+color: gray;
+list-style: none;
+}
+.navButton{
+    border: 2px solid white;
+    padding: 10px 15px;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
