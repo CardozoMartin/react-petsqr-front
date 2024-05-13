@@ -1,0 +1,78 @@
+.containerFeatures {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    margin: auto; /* Añadir margen automático para centrar */
+    padding: 20px; /* Agregar un espacio interno */
+  }
+.leftFeature {
+  margin-top: 60px;
+  width: 50%;
+}
+.rightFeature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.imageFeature {
+  width: 80%;
+}
+.rightFeature > h3 {
+  font-size: 40px;
+}
+.rightFeature > h5 {
+  font-size: 24px;
+  font-style: italic;
+  color: #333;
+  margin-top: 20px;
+}
+.rightFeature > p {
+  font-size: 20px;
+  color: #777;
+  margin-top: 30px;
+}
+.rightFeature > button {
+  width: 150px;
+  border: none;
+  padding: 15px 20px;
+  background-color: #5b24f3;
+  color: white;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.containerTwho {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 110px;
+  width: 100%;
+  width: 1024px;
+}
+
+@media only screen and (max-width: 480px) {
+    .containerFeatures{
+        flex-direction: column;
+    }
+    .imageFeature {
+      display: none;
+       /* Reducir el ancho de la imagen */
+    }
+    .rightFeature {
+      width: 100%;
+      height: 100%; /* Ajustar el ancho del contenido */
+    }
+    .rightFeature > h3 {
+        width: 100%;
+      font-size: 24px; /* Reducir el tamaño del título */
+    }
+    .rightFeature > h5 {
+        width: 100%;
+      font-size: 14px; /* Reducir el tamaño del subtítulo */
+    }
+    .rightFeature > p {
+        width: 100%;
+      font-size: 16px; /* Reducir el tamaño del párrafo */
+    }
+  }

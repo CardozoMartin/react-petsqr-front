@@ -15,8 +15,9 @@
     justify-content: space-between;
 }
 .logo{
+    font-size: 35px;
     font-weight: bold;
-    text-decoration: underline crimson;
+    text-decoration: underline rgb(104, 26, 250);
 }
 
 .menu{
@@ -32,9 +33,15 @@ list-style: none;
 .navButton{
     border: 2px solid white;
     padding: 10px 15px;
-    background-color: crimson;
+    background-color: rgb(85, 27, 245);
     color: white;
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+    .menu {
+        display: none !important;
+    }
 }

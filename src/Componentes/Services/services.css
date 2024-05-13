@@ -1,0 +1,12 @@
+.containerServices{
+    display: flex;
+}
+.leftService{
+    width: 50%;
+}
+.rightService{
+width: 50%;    
+}
+.imageServices{
+    height: 100%;
+}

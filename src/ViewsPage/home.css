@@ -10,6 +10,13 @@
     top: 0;
     left: 0;
     z-index: -1;
-    clip-path: polygon(100% 0%,60% 0%, 37% 100%, 100% 100%);
+    clip-path: polygon(0% 0%,55% 0%, 37% 100%, 100% 100%);
     background-color: crimson;
+}
+.contactContainer{
+    width: 100%;
+    min-width: 1024px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,72 +1,91 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.containerIntro{
-    height: calc(100vh - 50px);
-    display: flex;
+.containerIntro {
+  height: calc(100vh - 50px);
+  display: flex;
+  padding: 20px;
 }
-.leftInt{
-    display: flex;
-    flex-direction: column;
-width: 60%;
-align-items: center;
-justify-content: center;
+.leftInt {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
 }
-.leftInt>h1{
-    width: 70%;
-   font-size: 60px; 
+.leftInt > h1 {
+  width: 70%;
+  font-size: 45px;
+  font-weight: bold;
 }
-.leftInt>p{
-    width: 70%;
-    font-size: 20px;
-    margin-top: 20px;
+.leftInt > p {
+  width: 70%;
+  font-size: 20px;
+  margin-top: 20px;
+  font-style: italic;
 }
-.leftDesc{
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 50px;
-}
-
-.leftDesc>button{
-padding: 15px;
-background-color: darkblue;
-color: white;
-border-radius: 10px;
-font-weight: bold;
-border: none;
-cursor: pointer;
-letter-spacing: 3px;
-}
-.leftContact{
-    display: flex;
-    flex-direction: column;
-}
-.leftContact>span{
-    font-weight: bold;
-    color: #f0667d;
-}
-.leftContact>h4{
-    color: gray;
+.leftDesc {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
-.image{
-    margin-top: 50px;
+.leftDesc > button {
+  padding: 15px;
+  background-color: #5b24f3;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+.leftContact {
+  display: flex;
+  flex-direction: column;
+}
+.leftContact > span {
+  font-weight: bold;
+  color: #f0667d;
+}
+.leftContact > h4 {
+  color: gray;
+}
+
+.image {
+  margin-top: 50px;
+  width: 100%;
+}
+
+.rightInt {
+  width: 40%;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+  .containerIntro {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .rightInt {
+    display: none;
+  }
+  .leftInt {
     width: 100%;
-}
-
-
-
-
-
-
-
-
-
-.rightInt{
-    width: 40%;
-    margin-top: 5px;
+    height: 100%;
+  }
+  .leftInt > h1 {
+    width: 100%;
+  }
+  .leftInt > p {
+    width: 100%;
+  }
+  .leftDesc {
+    width: 100%;
+    flex-direction: column;
+  }
 }
