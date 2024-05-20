@@ -34,7 +34,7 @@
   margin-top: 50px;
 }
 
-.leftDesc > button {
+.leftDesc > .register-button {
   padding: 15px;
   background-color: #5b24f3;
   color: white;
