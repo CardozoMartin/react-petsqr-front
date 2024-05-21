@@ -84,9 +84,9 @@ const Form = () => {
     />
 
     <div className="flex items-center justify-between">
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-white">
         No tienes cuenta?
-        <Link className="underline font-extrabold" to="/registro">
+        <Link className="underline font-extrabold" to="/register">
           Registrate
         </Link>
       </p>

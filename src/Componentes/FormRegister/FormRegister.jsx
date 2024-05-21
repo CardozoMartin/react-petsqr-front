@@ -4,7 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { postUserFn } from "../../API/ApiUsers";
 import { useState } from "react";
 import { useSession } from "../../Store/UseSession";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
 
@@ -149,16 +149,20 @@ const FormRegister = () => {
         </fieldset>
 
         <fieldset className="col-span-6 sm:flex sm:items-center sm:gap-4">
-          <button className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-900 hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
-            Crear cuenta
+        <button
+            className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-900 hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+            type="submit"
+             disabled={isSubmitting}
+          >
+            {isSubmitting ? "Registrando..." : "Crear cuenta"}
           </button>
 
           <p className="mt-4 text-sm text-gray-500 sm:mt-0">
             Ya tienes cuenta?{" "}
-            <button className="text-gray-700 underline font-bold ">
+            <Link to="/login" className="text-gray-700 underline font-bold ">
               {"  "}
               Iniciar
-            </button>
+            </Link>
             .
           </p>
         </fieldset>
