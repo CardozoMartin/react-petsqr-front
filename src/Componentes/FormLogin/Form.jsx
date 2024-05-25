@@ -57,16 +57,16 @@ const Form = () => {
   >
     <Input
       register={register}
-      placeholder="Telefono"
-      type="email"
-      id="email"
+      placeholder="username"
+      type="text"
+      id="username"
       className="col-span-6 sm:col-span-3 bg-white"
       options={{
         required: true,
         minLength: 4,
         maxLength: 6000,
       }}
-      name="Email"
+      name="username"
     />
 
     <Input

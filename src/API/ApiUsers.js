@@ -14,3 +14,19 @@ export const postUserFn = async (data) => {
   }
   return data;
 };
+
+export const getUsersFn = async () => {
+  const res = await fetch(`${API_URL}/registro`, {
+    method: "GET",
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Ocurrió un error al obtener la información de los usuarios");
+  }
+
+  const usersData = await res.json();
+  return usersData;
+};
