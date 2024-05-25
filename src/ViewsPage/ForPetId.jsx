@@ -1,21 +1,29 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { getPetByIdFn } from "../API/ApiPet";
 import { useParams } from "react-router-dom";
-import { getUsersFn } from "../API/ApiUsers";
+import Modal from 'react-modal';
+
+// Configuración de accesibilidad para react-modal
+Modal.setAppElement('#root');
 
 const ForPetId = () => {
   const { petId } = useParams(); // Obtiene el petId de la URL usando useParams
   
-  
-  
-  const { data: pet, isLoading: isLoading, isError: isError } = useQuery({
+  const { data: pet, isLoading, isError } = useQuery({
     queryKey: ["pet-by-id", petId],
     queryFn: () => getPetByIdFn(petId),
   });
-  console.log(pet)
-  
-  
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   if (isLoading) {
     return (
@@ -38,7 +46,6 @@ const ForPetId = () => {
   
 
   if (pet) {
-    console.log(pet.data.instagram)
     return (
       <>
         <section>
@@ -46,7 +53,7 @@ const ForPetId = () => {
             <div className="relative mt-16 mb-32 max-w-lg mx-auto mt-24 border-black">
               <div className="rounded overflow-hidden shadow-md bg-white">
                 <div className="absolute -mt-20 w-full flex justify-center">
-                  <div className="h-32 w-32">
+                  <div className="h-32 w-32 cursor-pointer" onClick={openModal}>
                     <img
                       src={pet.data.image}
                       className="rounded-full object-cover h-full w-full shadow-md"
@@ -128,10 +135,10 @@ const ForPetId = () => {
                           stroke-linejoin="round"
                         />
                       </svg>{" "}
-                      <span className="mt-1 ms-2">Facebook</span>
+                      <span className="mt-1 ms-2 size-50">Facebook</span>
                     </button>
                     <button
-                      className="select-none rounded-lg bg-blue-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ms-2 flex"
+                      className="select-none rounded-lg bg-purple-700 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ms-2 flex"
                       type="button"
                     >
                       <a
@@ -140,30 +147,9 @@ const ForPetId = () => {
                         rel="noopener noreferrer"
                         className="flex items-center"
                       >
-
+<i class="bi bi-instagram text-xl"></i>
                       
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width="24"
-                        height="24"
-                        color="#000000"
-                        fill="none"
-                      >
-                        <path
-                          d="M2.5 12C2.5 7.52166 2.5 5.28249 3.89124 3.89124C5.28249 2.5 7.52166 2.5 12 2.5C16.4783 2.5 18.7175 2.5 20.1088 3.89124C21.5 5.28249 21.5 7.52166 21.5 12C21.5 16.4783 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4783 2.5 12Z"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M16.9265 8.02637H13.9816C12.9378 8.02637 12.0894 8.86847 12.0817 9.91229L11.9964 21.4268M10.082 14.0017H14.8847"
-                          stroke="currentColor"
-                          stroke-width="1.5"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>{" "}
+                     {" "}
                       <span className="mt-1 ms-2">instagram</span>
                       </a>
                     </button>
@@ -173,6 +159,29 @@ const ForPetId = () => {
             </div>
           </div>
         </section>
+
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Imagen de Mascota"
+          style={{
+            content: {
+              top: '50%',
+              left: '50%',
+              right: 'auto',
+              width: "30%",
+              
+              bottom: 'auto',
+              marginRight: '-50%',
+              transform: 'translate(-50%, -50%)',
+            },
+          }}
+        >
+          <div className="flex justify-end">
+            <button onClick={closeModal} className="text-xl font-bold">&times;</button>
+          </div>
+          <img src={pet.data.image} className="object-cover w-full h-full" />
+        </Modal>
       </>
     );
   }

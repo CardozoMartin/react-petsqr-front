@@ -17,7 +17,7 @@ const Home = () => {
     <>
       {!isLoggedIn && (
         <div className="container">
-          <Navbar />
+         
           <Introi></Introi>
         </div>
       )}
@@ -28,7 +28,7 @@ const Home = () => {
       )}
       {isLoggedIn && (
         <div>
-          <Navbar></Navbar>
+   
           <FormPets />
           <PetGallery />
         </div>

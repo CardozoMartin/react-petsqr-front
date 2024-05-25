@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Link, NavLink, Navigate } from "react-router-dom";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
 
@@ -33,9 +33,15 @@ const Navbar = () => {
           <h1 className="logo">PetsQr</h1>
           {!isLoggedIn && (
             <ul className="menu">
-              <li className="menuItem">Home</li>
-              <li className="menuItem">Registro</li>
-              <li className="menuItem">Ayuda</li>
+              <NavLink to={"/"}>
+              <li className="menuItem" >Home</li>
+              </NavLink>
+              <NavLink to={"/register"}>
+              <li className="menuItem" >Registro</li>
+              </NavLink>
+              <NavLink to={"/help"}>
+              <li className="menuItem" >Ayuda</li>
+              </NavLink>
             </ul>
           )}
         </span>
